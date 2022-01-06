@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="../assets/stylesheets/products.scss">
+<%= order.inspect%>
+<div> ------ </div>
+<%= puts order %>
+<ul class="list-group">
+  <% order.line_items.each do |line_item| %>
+    <li class="list-group-item">
+      <%= product.find(line_item).name %> 
+      <img src=<%= product.find(line_item).image %>></img>
+      <p><%= product.find(line_item).description %> </p>
+    </li>
+  <% end %>
+  <li class="list-group-item">
+    <%= order.total %>
+  </li>
+  <li class="list-group-item">
+    <%= order.email %>
+  </li>
+</ul>
