@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
 
+  before_filter :authorize
+
   def show
     @order = Order.find(params[:id])
     @products = Product.all.order(created_at: :desc)
